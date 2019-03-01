@@ -20,19 +20,17 @@ class TodoItem extends Component {
 
   render() {
     return (
-
-      <div className="input-group todo-item">
-        <div>
-            <input id={"taskCheck" + this.props.item.id}
-              type="checkbox" 
-              checked={this.state.completed} 
-              onChange={this.handleChange}
-            />
-        </div>
-        <label for={"taskCheck" + this.props.item.id}
+      <li className="list-group-item">
+        <input id={"taskCheck" + this.props.item.id}
+          type="checkbox" 
+          checked={this.state.completed} 
+          onChange={this.handleChange}
+        />
+        
+        <label htmlFor={"taskCheck" + this.props.item.id}
           className={this.state.completed === true ? "alertMy alert-success" : "alertMy alert-danger"}>{this.props.item.text}
         </label>
-      </div>
+      </li>
     )
   }
 }
